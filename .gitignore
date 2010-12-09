@@ -1,11 +1,2 @@
-.mr.developer.cfg
-.installed.cfg
-.pydevproject
-.project
-.settings
-bin
-develop-eggs
-eggs
-parts
-src
-sling
+*.pyc
+*egg-info

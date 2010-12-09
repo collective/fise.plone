@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="fise.plone">
+    
+    <browser:page
+        name="enhancements"
+        for="Products.ATContentTypes.interfaces.IATDocument"
+        permission="zope2.View"
+        template="templates/raw.pt"
+        class=".browser.RawEnhancementsView"
+    />
+     
+    <subscriber for="Products.ATContentTypes.interfaces.IATDocument
+                     Products.Archetypes.interfaces.IObjectInitializedEvent"
+                handler=".subscribers.fise_indexer_handler" />
+
+    <subscriber for="Products.ATContentTypes.interfaces.IATDocument
+                     Products.Archetypes.interfaces.IObjectEditedEvent"
+                handler=".subscribers.fise_indexer_handler" />
+              
+ </configure>
