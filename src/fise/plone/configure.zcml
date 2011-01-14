@@ -5,19 +5,22 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="fise.plone">
     
+    <include file="profiles.zcml" />
+    
     <browser:page
-        name="enhancements"
-        for="Products.ATContentTypes.interfaces.IATDocument"
+        name="fiseenhancements"
+        for="Products.Archetypes.interfaces.IBaseObject"
+        layer="fise.plone.Layer"
         permission="zope2.View"
         template="templates/raw.pt"
         class=".browser.RawEnhancementsView"
     />
      
-    <subscriber for="Products.ATContentTypes.interfaces.IATDocument
+    <subscriber for="Products.Archetypes.interfaces.IBaseObject
                      Products.Archetypes.interfaces.IObjectInitializedEvent"
                 handler=".subscribers.fise_indexer_handler" />
 
-    <subscriber for="Products.ATContentTypes.interfaces.IATDocument
+    <subscriber for="Products.Archetypes.interfaces.IBaseObject
                      Products.Archetypes.interfaces.IObjectEditedEvent"
                 handler=".subscribers.fise_indexer_handler" />
               

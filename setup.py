@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '1.0'
+version = '0.1'
 shortdesc = 'FISE Semantic Engine: RESTful Plone Integration.'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 tests_require = ['interlude']
@@ -31,7 +31,6 @@ setup(name='fise.plone',
             'setuptools',
             'fise.client',
             'Plone',
-
       ],
       tests_require=tests_require,
       test_suite="fise.client.tests.test_suite",
