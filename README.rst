@@ -22,5 +22,36 @@ Current features:
 Installation 
 ------------
 
-In your Plone buildout add the a line with ``fise.plone`` to your instances 
-``eggs`` and `zcml``
+In a Plone buildout add the a line with ``fise.plone`` to your instances 
+``eggs`` and `zcml``. 
+
+Run buildout.
+
+(Re)start Zope/Plone.
+
+In Configuration -> Addons: Install ``FISE Plone Integration``.
+
+Changelog
+=========
+
+0.1
+---
+- initial code, tests and documentation
+
+Copyright, License, Contributors
+================================
+
+copyright BlueDynamics Alliance, 2010-2011
+
+This package is provided under the OSI-approved OpenSource License 
+`GNU General Public License, version 2
+<http://opensource.org/licenses/gpl-2.0>`_ (as Plone itself 
+is).
+
+Contributors:
+
+- funded by `IKS-Project early adopters program 
+  <http://wiki.iks-project.eu/index.php/About>`_
+  
+- Jens Klein <jens@bluedynamics.com>, Klein & Partner KG: initial code, tests, 
+  documentation and first release.
