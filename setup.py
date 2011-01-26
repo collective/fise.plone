@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1'
+version = '0.2'
 shortdesc = 'FISE Semantic Engine: RESTful Plone Integration.'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 tests_require = ['interlude']

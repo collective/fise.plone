@@ -13,3 +13,5 @@ src/*.egg-info
 dist
 .mr.developer.cfg
 coverage
+downloads
+sling

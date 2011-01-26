@@ -1,6 +1,10 @@
 from fise.client import FISE
-fise = FISE('http://localhost:8080/')
+from Products.CMFCore.utils import getToolByName
+SERVER = 'http://localhost:8080/'
 
 def get_fise(context):
-    # XXX this need improvement
-    return fise
+    ptool = getToolByName(context, 'portal_properties')
+    fiseprops = ptool.get('fise_properties', None)
+    if fiseprops is not None:
+        return FISE(fiseprops.getProperty('server'))
+    return FISE(SERVER)

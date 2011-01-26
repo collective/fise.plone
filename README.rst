@@ -34,6 +34,12 @@ In Configuration -> Addons: Install ``FISE Plone Integration``.
 Changelog
 =========
 
+0.2
+---
+
+- make fise server configureable through ``portal_properties``. See 
+  ``propertiestool.xml`` in the profile for details. - jensens, 2011-01-26
+
 0.1
 ---
 - initial code, tests and documentation
