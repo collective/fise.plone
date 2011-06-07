@@ -5,14 +5,24 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="fise.plone">
     
+    <include package="Products.CMFPlone" />
+    
     <include file="profiles.zcml" />
     
+    <browser:page
+        name="fiseenhancementsraw"
+        for="Products.Archetypes.interfaces.IBaseObject"
+        layer="fise.plone.Layer"
+        permission="zope2.View"
+        template="templates/raw.pt"
+        class=".browser.RawEnhancementsView"
+    />
     <browser:page
         name="fiseenhancements"
         for="Products.Archetypes.interfaces.IBaseObject"
         layer="fise.plone.Layer"
         permission="zope2.View"
-        template="templates/raw.pt"
+        template="templates/enhancements.pt"
         class=".browser.RawEnhancementsView"
     />
      
