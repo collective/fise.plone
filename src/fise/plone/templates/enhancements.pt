@@ -26,10 +26,8 @@
               </li>
             </ul>
           </tal:if>
-          <tal:if tal:condition="not: item">
-            <p>no stanbol enhancements stored for this item.</p>
-          </tal:if>        
         </tal:loop>
+        <hr />
     </metal:content-core>
 </metal:content-core>
 
