@@ -11,24 +11,24 @@
     <metal:content-core define-macro="content-core">
         <h2>Stanbol Enhancements</h2>
         <tal:loop tal:repeat="item view/enhancements">
-        <tal:if tal:condition="item">
-          <h3 tal:content="item/name">itemname</h3>
-          <span class="discreet">Confidence: <span tal:content="python:'%1.2f' % item['confidence']"></span></span>
-          <tal:if tal:condition="item/url">
-          <p><a href="#"
-                tal:attributes="href item/url">more information on <span tal:content="item/name">name</span></a></p>
+          <tal:if tal:condition="item">
+            <h3 tal:content="python: item['name']">itemname</h3>
+            <span class="discreet">Confidence: <span tal:content="python:'%1.2f' % item['confidence']"></span></span>
+            <tal:if tal:condition="item/url">
+            <p><a href="#"
+                  tal:attributes="href item/url">more information on <span tal:content="item/name">name</span></a></p>
+            </tal:if>
+            <ul>
+              <li tal:repeat="entry python:item['types']" class="discreet">
+                 <a href="#" 
+                    tal:content="python:entry[0]"
+                    tal:attributes="href python:entry[1]">typename</a>
+              </li>
+            </ul>
           </tal:if>
-          <ul>
-            <li tal:repeat="entry python:item['types']" class="discreet">
-               <a href="#" 
-                  tal:content="python:entry[0]"
-                  tal:attributes="href python:entry[1]">typename</a>
-            </li>
-          </ul>
-        </tal:if>
-        <tal:if tal:condition="not: item">
-          <p>no stanbol enhancements stored for this item.</p>
-        </tal:if>        
+          <tal:if tal:condition="not: item">
+            <p>no stanbol enhancements stored for this item.</p>
+          </tal:if>        
         </tal:loop>
     </metal:content-core>
 </metal:content-core>

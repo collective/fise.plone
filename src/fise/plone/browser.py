@@ -5,12 +5,11 @@ import json
 class RawEnhancementsView(BrowserView):
     
     def enhancements(self):
+        records = []
         md = getattr(self.context, '_fise_enhancements', None)
         if not md:
-            return 'None'
+            return records
         md = json.loads(md)
-        from pprint import pprint
-        records = []
         for enhkey in md:
             data = md[enhkey]
             record = {}
